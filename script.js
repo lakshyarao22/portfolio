@@ -26,9 +26,9 @@
 // Icon cycler for bottom-left icons
 (function(){
 	const icons = [
-		'assests/icons/Heart.svg',
-		'assests/icons/Peace.svg',
-		'assests/icons/Victory.svg'
+		'assets/icons/Heart.svg',
+		'assets/icons/Peace.svg',
+		'assets/icons/Victory.svg'
 	];
 	let i = 0;
 	const img = document.querySelector('.icons .icon');
