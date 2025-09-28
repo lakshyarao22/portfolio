@@ -28,7 +28,7 @@
 	const icons = [
 		'assets/icons/Heart.svg',
 		'assets/icons/Peace.svg',
-		'assets/icons/Victory.svg'
+		'assets/icons/Victory.svg',
 	];
 	let i = 0;
 	const img = document.querySelector('.icons .icon');
