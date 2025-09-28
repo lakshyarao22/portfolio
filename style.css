@@ -270,7 +270,9 @@ body > * {
   left: 50px; /* same as signature's right */
   bottom: 45px; /* same as signature's bottom */
   z-index: 999;
-  pointer-events: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .icons .icon {
@@ -282,5 +284,14 @@ body > * {
 /* Make SVG icons appear white (works for most colored icons) */
 .icons .icon {
   filter: invert(100%) sepia(0%) saturate(0%) brightness(100%);
+}
+
+.icon-link {
+  display: inline-block;
+}
+
+.icon-link:focus {
+  outline: 3px solid rgba(246,109,39,0.12);
+  border-radius: 6px;
 }
 
