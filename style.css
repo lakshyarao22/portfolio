@@ -77,6 +77,8 @@ body > * {
 .split__left {
   /* Slightly darker left side so the split is visible */
   background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.06));
+  /* ensure there's room at the bottom so fixed icons don't overlap content */
+  padding-bottom: calc(3rem + 90px);
 }
 
 .split__right {
@@ -167,6 +169,11 @@ body > * {
   gap: 1.5rem;
   width: 100%;
   margin-top: 0.5rem;
+  /* limit height so the grid itself can scroll independently of the page */
+  max-height: calc(100% - 220px); /* leave room for heading/description; tweak if needed */
+  overflow-y: auto;
+  padding-right: 6px; /* breathing room for scrollbar */
+  padding-top: 6px; /* breathing room for cards */
 }
 
 .project-card {
@@ -212,6 +219,18 @@ body > * {
   .card-title { font-size: 20px; }
 }
 
+/* Simple scrollbar styling so it blends with the site */
+.projects-grid::-webkit-scrollbar {
+  width: 10px;
+}
+.projects-grid::-webkit-scrollbar-thumb {
+  background: rgba(253,250,241,0.12);
+  border-radius: 8px;
+}
+.projects-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 @media (max-width: 720px) {
   .hero-heading { font-size: 36px; }
   .hero-heading .name { font-size: 40px; }
@@ -243,6 +262,8 @@ body > * {
 @media (max-width: 720px) {
   .split { flex-direction: column; }
   .split__left, .split__right { padding: 2rem; }
+  /* keep extra bottom space on mobile as well */
+  .split__left { padding-bottom: calc(2rem + 90px); }
   /* When stacked, allow the hero image to have an auto height so it doesn't crop awkwardly */
   .split__right .content { height: auto; }
   .hero { height: auto; object-fit: contain; }
@@ -273,6 +294,20 @@ body > * {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+/* background plate behind the icons so they don't overlap content on small screens */
+.icons::before {
+  content: "";
+  position: absolute;
+  inset: -10px -14px -10px -14px; /* extend a bit around the icons */
+  background: transparent;
+  border-radius: 12px;
+  z-index: -1;
+  opacity: 1;
+  background-image: url("assests/noise.svg");
+  background-repeat: repeat;
+  mix-blend-mode: normal;
 }
 
 .icons .icon {
