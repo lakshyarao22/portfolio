@@ -126,7 +126,7 @@ body > * {
   height: 2px;
   background: linear-gradient(90deg, var(--orange), rgba(246,109,39,0.6));
   margin-top: 10px;
-  margin-bottom: 12px; /* ensure description sits below the line */
+  margin-bottom: 5px; /* ensure description sits below the line */
   border-radius: 2px;
 }
 
