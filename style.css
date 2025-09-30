@@ -146,8 +146,8 @@ body > * {
   color: var(--orange);
   font-size: 45px;
   font-weight: 700;
-  margin-top: 1.25rem; /* space between description and Projects heading */
-  margin-bottom: 0.75rem;
+  margin-top: 1px; /* space between description and Projects heading */
+  margin-bottom: 1px;
 }
 
 /* subtle underline below Projects heading to match the name underline */
